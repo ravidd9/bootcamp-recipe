@@ -12,7 +12,7 @@ $("#search").on("click", function () {
         console.log(final)
         $.post(`/recipes`, final, function (recipes) {
             recipes.forEach(rec => {
-                rec.ingredients = rec.ingredients.split(" ")
+                rec.ingredients = rec.ingredients.split(", ")
             })
             renderer.render(recipes)
         })
