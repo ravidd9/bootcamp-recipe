@@ -11,12 +11,28 @@
         <input type="text" id="ings" placeholder="enter ingredients">
         <button id="search">Search</button>
     </div>
-    <div id="container"></div>
-    
+    <div id="recipes-container"></div>
+    <!-- ----------------------------------------------------->
+    <script id="recipe-template" type="text/x-handlebars-template">
+        {{#each recipes}}
+        <div class="recipeCard">
+            <div class="link"><a href={{url}}>{{title}}</div>
+            <img src="{{thumbnail}}">
+            <ul class="ings">Ingredients
+                {{#each ingredients}}
+                    <li>{{this}}</li>
+                {{/each}}
+            </ul>
+        </div>
+        {{/each}}
+    </script>
+    <!-- ---------------------------------------------------- -->
+
 
 
     <script src="./jquery/dist/jquery.js"></script>
     <script src="./handlebars/dist/handlebars.js"></script>
+    <script src="Renderer.js"></script>
     <script src="main.js"></script>
 </body>
 
