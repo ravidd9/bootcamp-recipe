@@ -16,13 +16,15 @@
     <script id="recipe-template" type="text/x-handlebars-template">
         {{#each recipes}}
         <div class="recipeCard">
-            <div class="link"><a href={{url}}>{{title}}</div>
+            <div class="link"><a href={{url}}>{{title}}</a></div>
             <img src="{{thumbnail}}">
-            <ul class="ings">Ingredients
-                {{#each ingredients}}
-                    <li>{{this}}</li>
-                {{/each}}
-            </ul>
+            <div class="ings">Ingredients</div>
+                <ul>
+                    {{#each ingredients}}
+                        <li>{{this}}</li>
+                    {{/each}}
+                </ul>
+            
         </div>
         {{/each}}
     </script>

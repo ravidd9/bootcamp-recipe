@@ -12,8 +12,6 @@ router.get(`/recipes/:food`, function(req,res){
     request(`http://www.recipepuppy.com/api/?q=${food}`,function(err, result){
         let body = JSON.parse(result.body)
         let recipes = body.results
-        console.log(recipes)
-        console.log(ings)
         res.send(recipes)
     })
 
